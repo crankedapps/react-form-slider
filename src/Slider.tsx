@@ -7,8 +7,8 @@ import './Slider.scss';
 export interface ISliderProps {
     min: number;
     max: number;
+    value: number;
     width?: string;
-    value?: number;
     step?: number;
     onDrag?: (value: number) => void;
     onDraggingStateChanged?: (value: boolean) => void;
@@ -18,7 +18,7 @@ export interface ISliderProps {
 /**
  * Slider compontent
  */
-function Slider({ min, max, width = '100%', value = 0, step, onDrag, onDraggingStateChanged, onValueChanged }: ISliderProps) {
+function Slider({ min, max, width = '100%', value, step, onDrag, onDraggingStateChanged, onValueChanged }: ISliderProps) {
 
     // Init state
     const [isDragging, setIsDragging] = useState(false);
@@ -26,7 +26,7 @@ function Slider({ min, max, width = '100%', value = 0, step, onDrag, onDraggingS
 
     // Validate properties
     if (min >= max) { throw new Error('min prop must be less than max'); }
-    if (value != null && value != undefined && (value < min || value > max)) { throw new Error('value prop must be between min and max'); }
+    if (value < min || value > max) { throw new Error('value prop must be between min and max'); }
     if (width.slice(-1) !== '%' && width.slice(-2).toLowerCase() !== 'px') { throw new Error('width prop must be a percentage or px string (ex: "100%" or "100px")'); }
     if (step) {
         if (step <= 0) { throw new Error('step prop must be greater than 0'); }
