@@ -1,6 +1,6 @@
 # react-form-slider
 
-This is a coding exercise I was required to do for a job application.  See `frontend_exercise.pdf` for the challenge's instructions.  Basically they wanted a custom slider in React not using native HTML range input or any 3rd party dependencies.  I am also not supposed to spend more than 2 hours (exceeded by a bit).  Please don't judge too harshly - although I have 8+ years of daily Angular experience at the time of writing this, I have spent very little time working with React, mostly just while using Gatsby on a small project.
+This is a coding exercise I was required to do for a job application.  See [/public/frontend_exercise.pdf](/public/frontend_exercise.pdf) for the challenge's instructions.  Basically, they wanted a custom slider in React not using native HTML range input or any 3rd party dependencies.  I was also not supposed to spend more than 2 hours.
 
 ## Usage
 ### Component Example
@@ -25,6 +25,17 @@ Property | Type | Default | Description
 `onValueChanged` | `func` | `undefined` | `(value: number) => void` where `value` is the updated value when slider handle drag stops (mouse up or touch end).
 `onDrag` | `func` | `undefined` | `(value: number) => void` where `value` is the updated value emitted while slider handle is actively being dragged.
 `onDraggingStateChanged` | `func` | `undefined` | `(value: boolean) => void` where `value` is the state if user is dragging slider handle (true is dragging, false is not).
+
+## Run
+* Clone repository to your local system
+* Run `npm i`
+* Run `npm run dev`
+
+## My Challenge Feedback / Notes
+* The challenge didn't mention any `step` property which I think is essential to any slider or else you are just calculating based on handle position within the slider bar, so depending on slider's range and pixel position of slider handle it could calculate to an obscure number such as 52.0030499. So, I added the property (as optional) to make for prettier numbers and better user experience.
+* The challenge required a `width` property - although I implemented this as requested, I don't necessarily agree with this philosophy.  I think it's mostly standard in primitive UI component libraries for the form controls fill the width of their container.  That styling should come from the parent component using a container element which the child form control component is a descendant of.
+* I exceeded the two-hour time limit by a bit as I had to brush up on React (been in the Angular ecosystem the last 8 years).  I am confident I could easily step into using React as a daily driver, but my past experiences have been limited to mostly just use with Gatsby and some tutorials here and there.
+
 
 # React + TypeScript + Vite
 

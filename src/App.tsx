@@ -7,6 +7,7 @@ function App() {
   const max: number = 100;
   const width: string  = '300px';
   const defaultVal: number = 50;
+  const step = 1;
   
   const [value, setValue] = useState(defaultVal);
   const [dragValue, setDragValue] = useState(defaultVal);
@@ -17,7 +18,7 @@ function App() {
       <h1>react-form-slider</h1>
       <p>
         This is a <a href="./frontend_exercise.pdf" target="_blank">coding exercise</a> I was required to do for a job application.
-        Basically they wanted a custom slider in React not using the native HTML range input or any 3rd party dependencies.  
+        The task was to build a custom slider in React not using the native HTML range input or any 3rd party dependencies.  
         Use the slider below:
       </p>
       <Slider
@@ -25,6 +26,7 @@ function App() {
         max={max}
         width={width}
         value={value}
+        step={step}
         onValueChanged={setValue}
         onDrag={setDragValue}
         onDraggingStateChanged={setIsDragging}
@@ -34,6 +36,7 @@ function App() {
         <div>Value: {value} {value != defaultVal && (<>(<a href="#" onClick={() => setValue(defaultVal)}>reset</a>)</>)}</div>
         <div>Min: {min}</div>
         <div>Max: {max}</div>
+        <div>Step: {step}</div>
         <div>Width: {width}</div>
       </div>
       <h2>Drag State</h2>
