@@ -1,6 +1,30 @@
 # react-form-slider
 
-This is a coding exercise I was required to do for a job application.  See `frontend_exercise.pdf` for the challenge's instructions.  Basically they wanted a custom slider in React not using native HTML range input or any 3rd party dependencies.  I am also not supposed to spend more than 2 hours.  Please don't judge too harshly - although I have 8+ years of daily Angular experience at the time of writing this, I have spent very little time working with React, mostly just while using Gatsby on a small project.
+This is a coding exercise I was required to do for a job application.  See `frontend_exercise.pdf` for the challenge's instructions.  Basically they wanted a custom slider in React not using native HTML range input or any 3rd party dependencies.  I am also not supposed to spend more than 2 hours (exceeded by a bit).  Please don't judge too harshly - although I have 8+ years of daily Angular experience at the time of writing this, I have spent very little time working with React, mostly just while using Gatsby on a small project.
+
+## Usage
+### Component Example
+``` html
+<Slider
+  min={min}
+  max={max}
+  width={width}
+  value={value}
+  onValueChanged={setValue}
+  onDrag={setDragValue}
+  onDraggingStateChanged={setIsDragging}
+/>
+```
+### Properties
+Property | Type | Default | Description
+--- | --- | --- | ---
+`min` | `number` | `0` | Minimum range of slider
+`max` | `number` | `100` | Maximum range of slider
+`width` | `string` | `100%` | Width of slider container.  Must be a percentage (`%`) or pixel (`px`) CSS value.
+`value` | `number` | `0` | Value of slider
+`onValueChanged` | `func` | `undefined` | `(value: number) => void` where `value` is the updated value when slider handle drag stops (mouse up or touch end).
+`onDrag` | `func` | `undefined` | `(value: number) => void` where `value` is the updated value emitted while slider handle is actively being dragged.
+`onDraggingStateChanged` | `func` | `undefined` | `(value: boolean) => void` where `value` is the state if user is dragging slider handle (true is dragging, false is not).
 
 # React + TypeScript + Vite
 

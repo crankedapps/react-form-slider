@@ -4,13 +4,16 @@ $slider_bar_filled_color: #5725E5;
 $slider_handle_color: #5725E5;
 
 .slider-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 320px;
+    position: relative;
+    width: 300px;
+    max-width: 100%;
     background-color: $slider_bg_color;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 20px;
     line-height: 1;
+    box-sizing: border-box;
+    user-select: none;
+    -moz-user-select: none;
     .slider-bar {
         width: 100%;
         height: 10px;
@@ -22,7 +25,7 @@ $slider_handle_color: #5725E5;
             position: absolute;
             top: 0;
             left: 0;
-            width: 50%;
+            width: var(--data-filled-width);
             height: 100%;
             background-color: $slider_bar_filled_color;
             border-radius: 5px;
@@ -35,7 +38,7 @@ $slider_handle_color: #5725E5;
         border-radius: 50%;
         position: absolute;
         top: -5px;
-        left: calc(50% - 10px);
+        left: -10px;
         cursor: pointer;
         box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
         &:hover, &--dragging {
