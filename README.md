@@ -2,6 +2,9 @@
 
 This is a coding exercise I was required to do for a job application.  See [/public/frontend_exercise.pdf](/public/frontend_exercise.pdf) for the challenge's instructions.  Basically, they wanted a custom range slider in React *not* using native HTML range input or any 3rd party dependencies.  I was also not supposed to spend more than 2 hours.
 
+## Demo
+[https://crankedapps.github.io/react-form-slider/](https://crankedapps.github.io/react-form-slider/)
+
 ## Usage
 ### Component Example
 ``` html
